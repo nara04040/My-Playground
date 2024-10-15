@@ -6,6 +6,7 @@ import "./styles/themes.css";
 import "./styles/auth.css";
 import { Routes, Route, BrowserRouter as Router, Link } from "react-router-dom";
 import RegisterPage from "./pages/RegisterPage";
+import LinkToLoginRegister from "./components/LinkToLoginRegister";
 
 const App: React.FC = () => {
   return (
@@ -16,12 +17,10 @@ const App: React.FC = () => {
           <ThemeToggle />
         </div>
         <Router>
-          <nav>
-            <Link to="/login">로그인</Link> | <Link to={"/register"}>회원가입</Link>
-          </nav>
           <Routes>
             <Route path="/login" element={<LoginPage />} />
             <Route path="/register" element={<RegisterPage />} />
+            <Route path="/" element={<LinkToLoginRegister />} />
           </Routes>
         </Router>
       </AuthProvider>
